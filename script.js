@@ -1,24 +1,24 @@
 const frasesNao = [
-  "Tem certeza?",
-  "Pensa bem!",
-  "Erro 404: Opção Inválida",
-  "Tente novamente!",
-  "Nem pense nisso!",
-  "Olha o outro botão!",
-  "Clica no verde do lado!",
+  "Tem certeza, gatinha?",
+  "Pensa bem, meu anjo!",
+  "Erro 404: Opção Inválida!",
+  "Tente novamente, docinho!",
+  "Nem pense nisso, benzinho!",
+  "Olha o outro botão, meu amor!",
+  "Clica no verde, denguinho!",
   "Você tá tentando mesmo?",
-  "Sem chance!",
-  "Acho que sua mão escorregou...",
+  "Sem chance, gatinha!",
+  "Acho que sua mão escorregou, docinho...",
   "Sistema recusa essa opção!",
-  "Não foi dessa vez!",
-  "Ops, errou a direção!",
-  "Clica no SIM logo ❤️",
-  "Resposta incorreta!",
-  "Aperte o botão verde!",
+  "Não foi dessa vez, benzinho!",
+  "Ops, errou a direção, meu anjo!",
+  "Clica no SIM logo, meu amor ❤️",
+  "Resposta incorreta, denguinho!",
+  "Aperte o botão verde, gatinha!",
   "Tentativa negada com sucesso!",
-  "Esse botão é meramente ilustrativo!",
-  "Volte duas casas e clique no SIM",
-  "Você realmente achou que dava pra clicar aqui?"
+  "Você é o meu mundo, clica no SIM!",
+  "Não é esse botão, docinho!",
+  "Achou mesmo que dava pra dizer não, benzinho?"
 ];
 
 let contadorNao = 0;
@@ -26,8 +26,7 @@ let contadorNao = 0;
 // 1. Data de início da história (16 de Junho de 2026 às 17:00)
 const dataInicioHistoria = new Date(2026, 5, 16, 17, 0, 0); 
 
-// 2. Data do SIM oficial
-// Exemplo de preenchimento futuro: const dataSimOficial = new Date("2026-09-20T20:15:00");
+// 2. Data do SIM oficial (Preencha aqui DEPOIS do pedido para salvar na nuvem!)
 const dataSimOficial = null;
 
 // Lógica do Botão Fugitivo
@@ -49,7 +48,6 @@ function furaBotao() {
 
 // Ação ao Clicar em SIM
 function aceitou() {
-  // Salva no LocalStorage no exato segundo do clique
   if (!localStorage.getItem("dataSimLocal")) {
     const agora = new Date().toISOString();
     localStorage.setItem("dataSimLocal", agora);
@@ -118,16 +116,13 @@ setInterval(() => {
   // Cronômetro 2: Namoro
   const elNamoro = document.getElementById("cronometroNamoro");
   if (elNamoro) {
-    // Prioridades:
-    // 1º Data fixa do GitHub (const dataSimOficial)
-    // 2º Data gravada no navegador do celular/PC (localStorage)
     const dataLocalSalva = localStorage.getItem("dataSimLocal");
     const dataEfetiva = dataSimOficial || (dataLocalSalva ? new Date(dataLocalSalva) : null);
 
     if (dataEfetiva) {
       elNamoro.innerText = calcularTempo(dataEfetiva);
     } else {
-      elNamoro.innerText = "Aguardando o SIM... ❤️";
+      elNamoro.innerText = "Aguardando o SIM do meu anjo... ❤️";
     }
   }
 }, 1000);
