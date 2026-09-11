@@ -126,3 +126,34 @@ setInterval(() => {
     }
   }
 }, 1000);
+
+// Lógica para Gerar Corações Flutuantes no Fundo
+function criarCoracoesDeFundo() {
+  const container = document.createElement("div");
+  container.id = "heartsContainer";
+  document.body.appendChild(container);
+
+  const simbolos = ["❤️", "💖", "💕", "💗", "💓"];
+
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("bg-heart");
+    
+    heart.innerText = simbolos[Math.floor(Math.random() * simbolos.length)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 15 + "px";
+    
+    const duracao = Math.random() * 4 + 4;
+    heart.style.animationDuration = duracao + "s";
+    heart.style.opacity = Math.random() * 0.5 + 0.3;
+
+    container.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, duracao * 1000);
+  }, 300);
+}
+
+// Inicia os corações de fundo assim que o DOM carregar
+window.addEventListener("DOMContentLoaded", criarCoracoesDeFundo);
