@@ -27,7 +27,7 @@ let contadorNao = 0;
 const dataInicioHistoria = new Date(2026, 5, 16, 17, 0, 0); 
 
 // 2. Data do SIM oficial (Preencha aqui DEPOIS do pedido para salvar na nuvem!)
-const dataSimOficial = null;
+const dataSimOficial = new Date(2026, 8, 11, 20, 50, 0); 
 
 // Lógica do Botão Fugitivo
 function furaBotao() {
